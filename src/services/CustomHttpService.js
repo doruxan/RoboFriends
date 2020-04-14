@@ -44,18 +44,20 @@ export default class CustomHttpService {
       fetch(fullApiPath, fetchOptions)
         .then(res => {
           res.text().then(data => {
-            console.log('data', data)
-            // if (!fullApiPath.includes('/login') && parseInt(res.status, 10) === 401) return NavigationService.navigate(SCREEN_NAMES.LoginScreen);
-            if (parseInt(res.status / 100, 10) !== 2)
+            console.log(res)
+            if (parseInt(res.status / 100, 10) !== 2) {
+              console.log('reject')
               reject({
                 ...res,
                 _bodyText: data
-              });
-            else
+              })
+            }
+            else{
+              console.log('resolve')
               resolve({
                 ...res,
                 _bodyText: data
-              });
+              });}
           });
         })
         .catch(err => reject(err));

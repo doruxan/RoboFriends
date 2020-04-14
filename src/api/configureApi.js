@@ -14,6 +14,8 @@ customHttpService.setConfig({
   API_PATH: 'https://jsonplaceholder.typicode.com'
 });
 
+console.log('Configure Api')
+
 robotsApi.setHttpService(customHttpService);
 
 export default robotsApi;

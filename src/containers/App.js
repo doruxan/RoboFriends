@@ -32,6 +32,7 @@ const App = () => {
         <div className='tc'>
             <h1 className='f1'>RoboFriends</h1>
             <SearchBox onSearchChange={onSearchChange} />
+            <button onClick={() => dispatch(getRobots())}/>
             <Scroll>
                 <ErrorBoundry>
                     <CardList items={filteredRobots} />
